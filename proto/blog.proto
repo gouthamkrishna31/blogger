@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package blogging;
+package bloggging;
 
 option go_package = "./blogging";
 

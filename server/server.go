@@ -1,11 +1,13 @@
 package server
 
 import (
+	pb "blogging/proto"
 	bs "blogging/service"
 	"sync"
 )
 
 type server struct {
+	pb.UnimplementedBlogServiceServer
 	strategy bs.BlogStrategy
 }
 
