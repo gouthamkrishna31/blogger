@@ -7,11 +7,18 @@ import (
 	"google.golang.org/grpc"
 )
 
+// type BlogStrategy interface {
+// 	CreatePost(ctx context.Context, req *pb.CreatePostRequest) (*pb.CreatePostResponse, error)
+// 	ReadPost(ctx context.Context, req *pb.GetPostRequest) (*pb.GetPostResponse, error)
+// 	UpdatePost(ctx context.Context, req *pb.UpdatePostRequest) (*pb.UpdatePostResponse, error)
+// 	DeletePost(ctx context.Context, req *pb.DeletePostRequest) (*pb.DeletePostResponse, error)
+// }
+
 type InMemoryPostStrategy struct {
 	posts map[string]*pb.BlogPost
 }
 
-func NewInMemoryBlogStrategy() *InMemoryPostStrategy {
+func NewInMemoryPostStrategy() *InMemoryPostStrategy {
 	return &InMemoryPostStrategy{
 		posts: make(map[string]*pb.BlogPost),
 	}

@@ -4,13 +4,14 @@ import (
 	pb "blogging/proto"
 	"blogging/server"
 	strategy "blogging/strategy"
-	"google.golang.org/grpc"
 	"log"
 	"net"
+
+	"google.golang.org/grpc"
 )
 
 func main() {
-	strategy := strategy.NewInMemoryBlogStrategy()
+	strategy := strategy.NewInMemoryPostStrategy()
 
 	// Create a server instance with the chosen strategy
 	srv := server.GetInstance(strategy)
